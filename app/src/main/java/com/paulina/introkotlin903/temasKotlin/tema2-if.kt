@@ -10,4 +10,13 @@ fun main(){
     }else{
         println("No debe pagar impuestos")
     }
+    // similar al case en switch case en java
+    val mes = "1"
+    when(mes){
+        "1"-> println("enero")
+        "2"-> println("febrero")
+        "3"-> println("marzo")
+        else -> println("mes desconocido")
+    }
+    print(1..5)
 }
