@@ -9,6 +9,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.paulina.introkotlin903.practica1.saludoActivity  // Nombre de clase corregido (mayúscula)
 import com.paulina.introkotlin903.practica2.OperasActivity
+import com.paulina.introkotlin903.ejemplo.Cinepolis
+import com.paulina.introkotlin903.practica3.Ejemplo3Activity
+import com.paulina.introkotlin903.practica4.ActivityArchivos
+
 
 class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,6 +22,9 @@ class MenuActivity : AppCompatActivity() {
 
         val btnSaludo = findViewById<Button>(R.id.btn1)
         val btnOperas = findViewById<Button>(R.id.btn2)
+        val btnCinepolis= findViewById<Button>(R.id.btn3)
+        val btnEjemplo3 = findViewById<Button>(R.id.btn4)
+        val btnEjemplo4 = findViewById<Button>(R.id.btn5)
 
         btnSaludo.setOnClickListener {
             navigateToSaludo()  // Nombre de método corregido
@@ -26,7 +33,15 @@ class MenuActivity : AppCompatActivity() {
         btnOperas.setOnClickListener {
             navigateToOperas()  // Nombre de método corregido
         }
-
+btnCinepolis.setOnClickListener {
+    navigateToCinepolis()
+}
+        btnEjemplo3.setOnClickListener {
+            navigateToEjemplo3()
+        }
+btnEjemplo4.setOnClickListener {
+    navigateToEjemplo4()
+}
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -42,5 +57,18 @@ class MenuActivity : AppCompatActivity() {
     private fun navigateToOperas() {  // Corregido "navegate" a "navigate"
         val intent = Intent(this, OperasActivity::class.java)
         startActivity(intent)
+    }
+    private fun navigateToCinepolis() {
+        val intent = Intent(this, Cinepolis::class.java)
+        startActivity(intent)
+    }
+    private fun navigateToEjemplo3() {
+        val intent = Intent(this, Ejemplo3Activity::class.java)
+        startActivity(intent)
+    }
+    private fun navigateToEjemplo4() {
+        val intent = Intent(this, ActivityArchivos::class.java)
+        startActivity(intent)
+
     }
 }

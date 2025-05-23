@@ -3,4 +3,13 @@
     <string name="hola_mundo">Hola Mundo</string>
     <string name="escribe_tu_nombre">Escribe tu nombre</string>
     <string name="pulsame">pulsame\n</string>
+
+    <string name="nombre_hint">Nombre</string>
+    <string name="cantidad_compradores_hint">Cantidad Compradores</string>
+    <string name="cantidad_boletos_hint">Cantidad Boletos</string>
+    <string name="si_tarjeta">Sí (Tarjeta CINECO)</string>
+    <string name="no_tarjeta">No</string>
+    <string name="calcular">Calcular</string>
+    <string name="total_pagar_default">Total a pagar: 0</string>
+
 </resources>
