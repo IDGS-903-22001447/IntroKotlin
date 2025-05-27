@@ -66,27 +66,23 @@ class Cinepolis : AppCompatActivity() {
             return
         }
 
-        // Calcular total sin descuentos
         total = boletos * precioUnitario
 
-        // Aplicar descuentos por cantidad de boletos
+
         when {
-            boletos > 5 -> total *= 0.85 // 15% de descuento
-            boletos in 3..5 -> total *= 0.90 // 10% de descuento
-            boletos <= 2 -> total *= 1.0 // Sin descuento
+            boletos > 5 -> total *= 0.85
+            boletos in 3..5 -> total *= 0.90
+            boletos <= 2 -> total *= 1.0
         }
 
-        // Aplicar descuento adicional por tarjeta CINECO (si seleccionó "Sí")
         if (siTarjeta.isChecked) {
-            total *= 0.90 // 10% adicional
+            total *= 0.90
         }
 
-        // Formatear el precio como moneda
         val format = NumberFormat.getCurrencyInstance(Locale("es", "CO"))
         format.maximumFractionDigits = 0
         val precioFormateado = format.format(total)
 
-        // Construir mensaje de resultado
         mensaje = """
             Cliente: $nombreCliente
             Boletos comprados: $boletos
